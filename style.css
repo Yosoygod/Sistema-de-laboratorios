@@ -1,0 +1,334 @@
+/* =============================================
+   CCT - Control de Equipos del Liceo
+   style.css  |  Diseño inspirado en Mining Tycoon
+   ============================================= */
+
+/* PC y pantallas grandes */
+@media (min-width: 1024px) {
+    .contenedor {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+/* Tablets */
+@media (max-width: 1023px) {
+    .contenedor {
+        width: 90%;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .contenedor {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
+
+:root {
+  --bg: #0b1220;
+  --card: #152033;
+  --header: #0f5c4c;
+  --green: #1a7a62;
+  --green-hover: #22997a;
+  --slot: #1e2d3d;
+  --slot-hover: #273849;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --blue: #3b82f6;
+  --success: #34d399;
+  --danger: #f87171;
+  --border: rgba(255,255,255,0.07);
+  --radius: 12px;
+  --shadow: 0 18px 45px rgba(0,0,0,0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: linear-gradient(135deg, var(--header), #0a4a3d);
+  padding: 1.1rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.logo {
+  font-size: 1.9rem;
+}
+
+header h1 {
+  font-size: clamp(1.5rem, 4.5vw, 1.9rem);
+  font-weight: 700;
+}
+
+.tagline {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 2px;
+}
+
+/* ===== MAIN ===== */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background:
+    radial-gradient(ellipse at 15% 40%, rgba(26,122,98,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 15%, rgba(59,130,246,0.05) 0%, transparent 45%);
+}
+
+/* ===== CARD ===== */
+.card {
+  background: var(--card);
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem 1.6rem;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+  animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.section-label {
+  margin: 1.4rem 0 0.7rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.95rem 1.2rem;
+  margin: 0.55rem 0;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  color: #fff;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-green {
+  background: linear-gradient(135deg, var(--green), #158a6e);
+  box-shadow: 0 4px 14px rgba(26,122,98,0.35);
+}
+
+.btn-green:hover {
+  background: linear-gradient(135deg, var(--green-hover), #1aa382);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(26,122,98,0.45);
+}
+
+.btn-slot {
+  background: var(--slot);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.btn-slot:hover {
+  background: var(--slot-hover);
+  color: var(--text);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.badge {
+  background: var(--blue);
+  font-size: 0.62rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+/* ===== INFO & STATS ===== */
+.info-box {
+  background: var(--slot);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  margin: 1rem 0;
+  text-align: left;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.info-box strong {
+  color: var(--text);
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin: 1.2rem 0;
+}
+
+.stat {
+  background: var(--slot);
+  border-radius: 10px;
+  padding: 0.9rem;
+  text-align: center;
+}
+
+.stat .num {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--success);
+}
+
+.stat .lbl {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* ===== EQUIPMENT CARD ===== */
+.equipo {
+  background: var(--slot);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  margin: 0.6rem 0;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.equipo .id {
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.equipo .meta {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.estado-libre {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.estado-ocupado {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+/* ===== PAGES ===== */
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* ===== CAMPOS DEL FORMULARIO ===== */
+
+.contact-form input {
+  width: 100%;
+  padding: 16px;
+  font-size: 20px !important;
+  border-radius: 10px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: linear-gradient(135deg, #0a3d32, var(--header));
+  padding: 1.1rem 1.5rem;
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links button {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer-links button:hover {
+  color: #fff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .card {
+    padding: 1.5rem 1.2rem;
+  }
+  .card-title {
+    font-size: 1.25rem;
+  }
+  .stats-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}

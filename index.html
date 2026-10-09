@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <!-- =======================================================
+       CONFIGURACIÓN DEL DOCUMENTO
+       =======================================================
+       Aquí configuramos la información básica del sitio.
+
+       - UTF-8 permite utilizar caracteres como á, é, ñ, etc.
+       - viewport permite que el sitio sea responsive.
+       - description describe el contenido de la página.
+       - title define el nombre de la pestaña.
+       - style.css contiene el diseño visual.
+       ======================================================= -->
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    name="description"
+    content="Sistema de control e información de equipos informáticos del liceo - IETC"
+  >
+
+  <title>IETC - Información de Laboratorios</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <!-- =======================================================
+       HEADER - ENCABEZADO PRINCIPAL
+       =======================================================
+       Esta sección contiene el encabezado principal del sitio.
+
+       Aquí mostramos:
+       - Logo
+       - Nombre de la institución
+       - Descripción del proyecto
+       ======================================================= -->
+
+  <header>
+
+    <div class="header-inner">
+
+      <span class="logo">
+        💻
+      </span>
+
+      <div>
+
+        <h1>
+          IETC
+        </h1>
+
+        <p class="tagline">
+          Información de laboratorios
+        </p>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =======================================================
+       MAIN - CONTENIDO PRINCIPAL
+       =======================================================
+       Dentro de <main> se encuentran todas las secciones
+       principales del sitio.
+
+       Cada sección utiliza la clase "page".
+
+       JavaScript se encarga de mostrar solamente la sección
+       que el usuario haya seleccionado.
+       ======================================================= -->
+
+  <main>
+
+    <div class="card">
+
+
+      <!-- =====================================================
+           MENÚ PRINCIPAL
+           =====================================================
+           Esta es la pantalla inicial del sitio.
+
+           Los botones llaman a la función irA() de JavaScript
+           para cambiar entre las diferentes secciones.
+           ===================================================== -->
+
+      <div id="menu" class="page active">
+
+        <h2 class="card-title">
+          Menú Principal
+        </h2>
+
+
+        <!-- Dashboard -->
+
+        <button
+          class="btn btn-green"
+          onclick="irA('dashboard')"
+        >
+          <span class="badge">
+            LIVE ⏺️
+          </span>
+          Dash labs
+        </button>
+
+        <p class="section-label">
+          Laboratorios
+        </p>
+
+        <!-- Laboratorio 1 -->
+
+        <button
+          class="btn btn-slot"
+          onclick="irA('lab1')"
+        >
+          Laboratorio 1
+        </button>
+
+        <!-- Laboratorio 2 -->
+
+        <button
+          class="btn btn-slot"
+          onclick="irA('lab2')"
+        >
+          Laboratorio 2
+        </button>
+
+
+        <!-- Laboratorio 3 -->
+
+        <button
+          class="btn btn-slot"
+          onclick="irA('lab3')"
+        >
+          Laboratorio 3
+        </button>
+
+
+        <!-- Documentación -->
+
+        <button
+          class="btn btn-slot"
+          onclick="irA('docs')"
+        >
+          Documentación
+        </button>
+
+
+        <!-- Registro -->
+
+        <button
+          class="btn btn-slot"
+          onclick="irA('contactos')"
+        >
+          Registrarse
+        </button>
+
+      </div>
+
+
+
+      <!-- =====================================================
+           DASHBOARD
+           =====================================================
+           El Dashboard muestra un resumen general de todos
+           los equipos registrados en el sistema.
+
+           Los valores se actualizan mediante JavaScript.
+           ===================================================== -->
+
+      <div id="dashboard" class="page">
+
+        <h2 class="card-title">
+          Dash labs
+        </h2>
+
+
+        <!-- Estadísticas generales -->
+
+        <div class="stats-row">
+
+
+          <!-- Total de equipos -->
+
+          <div class="stat">
+
+            <div
+              class="num"
+              id="stat-total"
+            >
+              0
+            </div>
+
+            <div class="lbl">
+              Total equipos
+            </div>
+
+          </div>
+
+
+          <!-- Equipos libres -->
+
+          <div class="stat">
+
+            <div
+              class="num"
+              id="stat-libres"
+            >
+              0
+            </div>
+
+            <div class="lbl">
+              Libres
+            </div>
+
+          </div>
+
+
+          <!-- Equipos ocupados -->
+
+          <div class="stat">
+
+            <div
+              class="num"
+              id="stat-ocupados"
+            >
+              0
+            </div>
+
+            <div class="lbl">
+              Ocupados
+            </div>
+
+          </div>
+
+
+          <!-- Sistemas operativos -->
+
+          <div class="stat">
+
+            <div
+              class="num"
+              id="stat-sistemas"
+            >
+              0
+            </div>
+
+            <div class="lbl">
+              Sistemas OS
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Resumen del parque tecnológico -->
+
+        <div class="info-box">
+
+          <strong>
+            Resumen del parque tecnológico
+          </strong>
+
+          <br><br>
+
+          • <strong>Laboratorio 1</strong>
+          → 3 PCs (Windows 11)
+
+          <br>
+
+          • <strong>Laboratorio 2</strong>
+          → 3 PCs (Windows 11)
+
+          <br>
+
+          • <strong>Laboratorio 3</strong>
+          → 2 PCs (Ubuntu)
+
+          <br>
+
+          • <strong>Biblioteca</strong>
+          → 1 PC (Windows 10)
+
+          <br>
+
+          • <strong>Administración</strong>
+          → 1 PC (Windows 11)
+
+          <br>
+
+          • <strong>Sala Móvil</strong>
+          → 1 Notebook (Windows 11)
+
+          <br><br>
+
+          Los estados se guardan automáticamente
+          y no se pierden al recargar la página.
+
+        </div>
+
+
+        <!-- Volver al menú -->
+
+        <button
+          class="btn btn-green"
+          onclick="irA('menu')"
+        >
+          ← Volver al Menú
+        </button>
+
+      </div>
+
+
+
+      <!-- =====================================================
+           LABORATORIO 1
+           =====================================================
+           Esta sección muestra los equipos pertenecientes
+           al Laboratorio 1.
+
+           JavaScript genera automáticamente la información.
+           ===================================================== -->
+
+      <div id="lab1" class="page">
+
+        <h2 class="card-title">
+          ✨ Laboratorio 1 ✨
+        </h2>
+
+        <h3 class="card-title">
+          ✨ El laboratorio más god ✨
+        </h3>
+
+        <p
+          style="
+            color:var(--muted);
+            font-size:0.9rem;
+            margin-bottom:0.8rem;
+          "
+        >
+          3 equipos · Windows 10 / Windows 11
+        </p>
+
+
+        <!-- Lista de equipos -->
+
+        <div id="lab1-lista">
+
+          <!-- Se llena automáticamente con shuawder.js -->
+
+        </div>
+
+
+        <!-- Estadísticas -->
+
+        <div class="stats-row">
+
+
+          <div class="stat">
+
+            <div
+              class="num"
+              id="lab1-libres"
+            >
+              0
+            </div>
+
+            <div class="lbl">
+              Libres
+            </div>
+
+          </div>
+
+
+          <div class="stat">
+
+            <div
+              class="num"
+              id="lab1-ocupados"
+            >
+              0
+            </div>
+
+            <div class="lbl">
+              Ocupados
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <button
+          class="btn btn-green"
+          onclick="irA('menu')"
+        >
+          ← Volver al Menú
+        </button>
+
+      </div>
+
+
+
+      <!-- =====================================================
+           LABORATORIO 2
+           ===================================================== -->
+
+      <div id="lab2" class="page">
+
+        <h2 class="card-title">
+          😐 Laboratorio 2 😐
+        </h2>
+
+        <p
+          style="
+            color:var(--muted);
+            font-size:0.9rem;
+            margin-bottom:0.8rem;
+          "
+        >
+          3 equipos · Windows 11
+        </p>
+
+
+        <div id="lab2-lista">
+
+          <!-- Se llena automáticamente con shuawder.js -->
+
+        </div>
+
+
+        <div class="stats-row">
+
+          <div class="stat">
+
+            <div
+              class="num"
+              id="lab2-libres"
+            >
+              0
+            </div>
+
+            <div class="lbl">
+              Libres
+            </div>
+
+          </div>
+
+
+          <div class="stat">
+
+            <div
+              class="num"
+              id="lab2-ocupados"
+            >
+              0
+            </div>
+
+            <div class="lbl">
+              Ocupados
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <button
+          class="btn btn-green"
+          onclick="irA('menu')"
+        >
+          ← Volver al Menú
+        </button>
+
+      </div>
+
+
+
+      <!-- =====================================================
+           LABORATORIO 3
+           ===================================================== -->
+
+      <div id="lab3" class="page">
+
+        <h2 class="card-title">
+          🔴 Laboratorio 3 🔴
+        </h2>
+        <p
+          style="
+            color:var(--muted);
+            font-size:0.9rem;
+            margin-bottom:0.8rem;
+          "
+        >
+          2 PC · Ubuntu
+        </p>
+        <div id="lab3-lista">
+
+          <!-- Se llena automáticamente con shuawder.js -->
+
+        </div>
+        <div class="stats-row">
+          <div class="stat">
+            <div
+              class="num"
+              id="lab3-libres"
+            >
+              0
+            </div>
+            <div class="lbl">
+              Libres
+            </div>
+          </div>
+          <div class="stat">
+            <div
+              class="num"
+              id="lab3-ocupados"
+            >
+              0
+            </div>
+
+            <div class="lbl">
+              Ocupados
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <button
+          class="btn btn-green"
+          onclick="irA('menu')"
+        >
+          ← Volver al Menú
+        </button>
+
+      </div>
+
+      <!-- =====================================================
+           DOCUMENTACIÓN
+           ===================================================== -->
+
+      <div id="docs" class="page">
+        <h2 class="card-title">
+          Documentación / Información
+        </h2>
+
+        <!-- Descripción -->
+
+        <div class="info-box">
+          <strong>
+            1. Descripción del Proyecto
+          </strong>
+          <br><br>
+          <strong>
+            IETC – Información de equipos tecnológicos cercanos
+          </strong>
+          es un sistema web informativo orientado al
+          control y monitoreo de los dispositivos
+          informáticos de la institución.
+          <br><br>
+          Muestra el inventario completo, el estado de
+          ocupación (Libre/Ocupado), el sistema operativo
+          y el estado de conectividad de cada equipo.
+          <br><br>
+          Los cambios de estado se guardan en el navegador
+          mediante <strong>localStorage</strong> y no se
+          pierden al recargar.
+          <br><br>
+          Posiblemente encuentres errores o
+          desactualización de la información de los equipos.
+        </div>
+
+        <!-- Estructura -->
+
+        <div class="info-box">
+          <strong>
+            2. Estructura del Sitio
+          </strong>
+
+          <br><br>
+
+          Tres archivos principales:
+
+          <br><br>
+
+          • <strong>index.html</strong>
+          — Estructura semántica HTML5
+
+          <br>
+
+          • <strong>style.css</strong>
+          — Estilos y diseño responsive
+
+          <br>
+
+          • <strong>shuawder.js</strong>
+          — Datos de equipos, persistencia y lógica de control
+
+          <br><br>
+
+          <strong>
+            Secciones:
+          </strong>
+
+          <br>
+
+          1. Menú Principal
+
+          <br>
+
+          2. Dashboard
+
+          <br>
+
+          3. Laboratorio 1, 2 y 3
+
+          <br>
+
+          4. Documentación
+
+          <br>
+
+          5. Registro de usuarios
+
+        </div>
+
+
+
+        <!-- Información de equipos -->
+
+        <div class="info-box">
+
+          <strong>
+            3. Información real de cada equipo
+          </strong>
+
+          <br><br>
+
+          Cada equipo registra:
+
+          <br><br>
+
+          • <strong>ID</strong>
+          — Identificador único
+
+          <br>
+          • <strong>Ubicación</strong>
+          — Laboratorio, biblioteca, etc.
+          <br>
+          • <strong>Especificaciones</strong>
+          — Procesador, RAM y almacenamiento
+          <br>
+          • <strong>Estado</strong>
+          — Libre u Ocupado
+          <br>
+
+          • <strong>Sistema Operativo</strong>
+          — Windows, Ubuntu, etc.
+
+          <br>
+          • <strong>Conectividad</strong>
+          — En línea / Desconectado
+          <br>
+          • <strong>Última conexión</strong>
+          — Tiempo relativo
+        </div>
+
+        <!-- Inventario -->
+
+        <div class="info-box">
+          <strong>
+            4. Inventario actual
+          </strong>
+          <br><br>
+          <strong>
+            Laboratorio 1
+          </strong>
+          <br>
+          • PC-LAB01-01
+          → Intel Core i9-14900K · 3T · 350GB · Windows 11
+          <br>
+          • PC-LAB01-02
+          → Intel Core i9-14900K · 2T · 1T · Windows 11
+          <br>
+          • PC-LAB01-03
+          → Intel Core i9-14900K · 4T · 400GB · Windows 11
+          <br><br>
+          <strong>
+            Laboratorio 2
+          </strong>
+          <br>
+          • PC-LAB02-01
+          → Ryzen 5 5600G · 16GB · 512GB · Windows 11
+          <br>
+          • PC-LAB02-02
+          → Ryzen 5 5600G · 16GB · 512GB · Windows 11
+          <br>
+          • PC-LAB02-03
+          → Intel i5-11400 · 16GB · 512GB · Windows 11
+          <br><br>
+          <strong>
+            Laboratorio 3
+          </strong>
+          <br>
+          • PC-LAB03-01
+          → Intel i5-12400 · 16GB · 512GB · Ubuntu
+          <br>
+          • PC-LAB03-02
+          → Intel i5-12400 · 16GB · 512GB · Ubuntu
+          <br>
+          • NOTE-01
+          → Laptop HP 15 · 8GB · 256GB · Ubuntu
+          <br><br>
+          <strong>
+            Otros
+          </strong>
+          <br>
+          • PC-BIB-01
+          → Biblioteca · Windows 10
+          <br>
+          • PC-ADM-01
+          → Administración · Windows 11
+          <br>
+          • NOTE-02
+          → Sala Móvil · Windows 11
+        </div>
+
+        <!-- Uso del sistema -->
+
+        <div class="info-box">
+          <strong>
+            5. Cómo usar el sistema
+          </strong>
+          <br><br>
+          1. Abre <code>index.html</code> en el navegador.
+          <br>
+          2. Entra a un Laboratorio.
+          <br>
+          3. Usa los botones
+          <strong>Ocupar / Liberar</strong>.
+          <br>
+          4. Usa los botones
+          <strong>Reconectar / Desconectar</strong>.
+          <br>
+          5. Los cambios se guardan automáticamente.
+          <br>
+          6. El Dashboard refleja los números actualizados.
+        </div>
+
+        <!-- Autor -->
+
+        <div class="info-box">
+          <strong>
+            6. Autor y Licencia
+          </strong>
+          <br><br>
+          Proyecto desarrollado como trabajo evaluado
+          de Informática / Desarrollo Web.
+          <br><br>
+          Documentado como proyecto real.
+          <br><br>
+          <strong>
+            Licencia:
+          </strong>
+          Uso educativo. Libre de modificar y adaptar.
+        </div>
+
+        <!-- Sobre mi -->
+
+        <div class="info-box">
+          <strong>
+            7. Quién soy
+          </strong>
+          <br><br>
+          Soy un programador profesional.
+          <br>
+          Me apasiona crear soluciones innovadoras
+          a través del código y disfruto enfrentar
+          nuevos desafíos que me permitan crecer.
+
+        </div>
+
+        <!-- Volver -->
+
+        <button
+          class="btn btn-green"
+          onclick="irA('menu')"
+        >
+          ← Volver al Menú
+        </button>
+      </div>
+
+      <!-- =====================================================
+           CONTACTOS / REGISTRO
+           =====================================================
+           Esta sección permite al usuario crear un registro
+           ingresando sus datos.
+
+           Actualmente el formulario es visual.
+           Para guardar los datos realmente sería necesario
+           JavaScript con almacenamiento o un backend.
+           ===================================================== -->
+
+      <div id="contactos" class="page">
+        <h2 class="card-title">
+          Registro de Usuario
+        </h2>
+
+        <!-- Información -->
+
+        <div class="info-box">
+          <strong>
+            Crear una cuenta
+          </strong>
+          <br><br>
+          <p>
+            Completa los siguientes datos para registrarte
+            en nuestro sistema.
+          </p>
+        </div>
+
+        <!-- ===================================================
+             FORMULARIO DE REGISTRO
+             =================================================== -->
+
+        <form class="contact-form">
+
+          <!-- Nombre -->
+
+          <div class="info-box">
+          <strong>
+            <label for="nombre">
+              Nombre
+              <br>
+            </label>
+          </strong>
+
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Ingresa tu nombre"
+            required
+          >
+
+          <!-- Apellido -->
+
+          <strong>
+            <label for="apellido">
+              <br>
+                Apellido
+              <br>
+            </label>
+          </strong>
+          <input
+            type="text"
+            id="apellido"
+            name="apellido"
+            placeholder="Ingresa tu apellido"
+            required
+          >
+
+          <!-- Correo -->
+
+          <strong>
+            <label for="correo">
+              <br>
+                Correo electrónico
+              <br>
+            </label>
+          </strong>
+          <input
+            type="email"
+            id="correo"
+            name="correo"
+            placeholder="ejemplo@correo.com"
+            required
+          >
+
+          <!-- Teléfono -->
+
+          <strong>
+            <label for="telefono">
+              <br>
+                Número de teléfono
+              <br>
+            </label>
+          </strong>
+          <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            placeholder="+56 9 1234 5678"
+            required
+          >
+
+          <!-- Fecha -->
+
+          <strong>
+            <label for="fecha">
+              <br>
+              Fecha de nacimiento
+              <br>
+            </label>
+          </strong>
+          <input
+            type="date"
+            id="fecha"
+            name="fecha"
+            required
+          >
+
+          <!-- Contraseña -->
+
+          <strong>
+            <label for="password">
+              <br>
+                Contraseña
+              <br>
+            </label>
+          </strong>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Crea una contraseña"
+            required
+          >
+
+          <!-- Confirmar contraseña -->
+
+          <strong>
+            <label for="confirmar-password">
+              <br>
+                Confirmar contraseña
+              <br>
+            </label>
+          </strong>
+          <input
+            type="password"
+            id="confirmar-password"
+            name="confirmar-password"
+            placeholder="Repite tu contraseña"
+            required
+          >
+
+          <!-- Términos -->
+
+          <br>
+          <strong>
+            <label class="checkbox-label">
+              <input
+                type="checkbox"
+                id="terminos"
+                name="terminos"
+                required
+              >
+              Acepto los términos y condiciones.
+            </label>
+          </strong>
+
+          <!-- Crear cuenta -->
+
+          <button
+            type="submit"
+            class="btn btn-green"
+          >
+            Crear cuenta
+          </button>
+          </div>
+        </form>
+
+        <!-- Volver al menú -->
+
+        <button
+          class="btn btn-slot"
+          onclick="irA('menu')"
+        >
+          ← Volver al Menú
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- =======================================================
+       FOOTER - PIE DE PÁGINA
+       =======================================================
+       El footer contiene accesos rápidos a las diferentes
+       secciones del sitio.
+       ======================================================= -->
+  <footer>
+    <div class="footer-links">
+      <button onclick="irA('menu')">
+        Inicio
+      </button>
+      <button onclick="irA('dashboard')">
+        Dashboard
+      </button>
+      <button onclick="irA('docs')">
+        Documentación
+      </button>
+      <button onclick="irA('contactos')">
+        Contactos
+      </button>
+    </div>
+    <p>
+      © 2026 IETC – Información de equipos tecnológicos cercanos
+    </p>
+  </footer>
+  <!-- =======================================================
+       JAVASCRIPT
+       =======================================================
+       Conectamos el HTML con shuawder.js.
+
+       JavaScript controla:
+       - Navegación.
+       - Equipos.
+       - Estados.
+       - Dashboard.
+       - localStorage.
+       ======================================================= -->
+
+  <script src="shuawder.js"></script>
+</body>
+
+</html>
